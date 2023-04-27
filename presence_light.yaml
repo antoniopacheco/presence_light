@@ -48,11 +48,14 @@ blueprint:
     light_sensor:
       name: Light sensor
       description: Light sensor to read from
-      default: {}
+      default: []
       selector:
-        target:
-          entity:
-            domain: sensor
+        entity:
+          domain:
+            - sensor
+          device_class:
+            - illuminance
+          multiple: false
     light_threshold:
       name: Light threshold
       description: Light sensor‘s lower threshold
